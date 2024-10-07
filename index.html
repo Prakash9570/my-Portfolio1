@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prakash Mohite - Portfolio</title>
+    <meta name="description" content="Prakash Mohite's portfolio showcasing skills in ethical hacking, cybersecurity, and VAPT.">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
     <style>
         :root {
             --primary-color: #4F46E5;
@@ -14,22 +14,14 @@
             --background-color: #1E1B4B;
             --text-color: #FFFFFF;
         }
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
+        body {
             font-family: 'Arial', sans-serif;
+            background: url('./assets/images/pexels-jorge-jesus-137537-614117.jpg') no-repeat center center fixed;
+            background-size: cover;
             color: var(--text-color);
             line-height: 1.6;
-            overflow: hidden; /* Prevent scrolling */
-        }
-        .background-video {
-            position: fixed;
-            right: 0;
-            bottom: 0;
-            min-width: 100%; 
-            min-height: 100%;
-            z-index: -1;
+            margin: 0;
+            padding: 0;
         }
         .container {
             max-width: 1200px;
@@ -53,7 +45,7 @@
             color: var(--secondary-color);
         }
         .section {
-            background-color: rgba(0, 0, 0, 0.6);
+            background-color: rgba(255, 255, 255, 0.1);
             border-radius: 8px;
             padding: 20px;
             margin-bottom: 30px;
@@ -82,9 +74,11 @@
             text-align: center;
         }
         .contact a {
+            font-size: 1.2em;
             color: var(--secondary-color);
             text-decoration: none;
-            margin: 0 10px;
+            margin: 15px 10px;
+            display: inline-block;
         }
         .contact a:hover {
             text-decoration: underline;
@@ -100,58 +94,13 @@
     </style>
 </head>
 <body>
-    <!-- Background Video -->
-    <video autoplay loop muted playsinline class="background-video">
-        <source src="assets/images/47802-451812879_small(1).mp4" type="video/mp4">
-        Your browser does not support HTML5 video.
-    </video>
-
     <div class="container">
         <header>
-            <img src="./assets/images/profile-pic.png" alt="Prakash Mohite" class="profile-image">
+            <img src="./assets/images/profile-pic.png" alt="Profile picture of Prakash Mohite" class="profile-image">
             <h1>Prakash Mohite</h1>
             <p>Ethical Hacking | CyberSecurity</p>
         </header>
-
-        <section id="about" class="section">
-            <h2><i class="fas fa-user"></i> About Me</h2>
-            <p>Always passionate about cybersecurity and ethical hacking. Keep on finding bugs and vulnerabilities, including exploiting Windows AV.</p>
-        </section>
-
-        <section id="experience" class="section">
-            <h2><i class="fas fa-briefcase"></i> Company</h2>
-            <h3>Co-Founder Of Cyber-Paradox</h3>
-            <p> Present</p>
-            <ul>
-                <li>We provide VAPT and all other cybersecurity services.</li>
-                <li>Implemented best practices in cybersecurity and VAPT for your website and applications.</li>
-            </ul>
-        </section>
-        
-        <section id="education" class="section">
-            <h2><i class="fas fa-graduation-cap"></i> Education</h2>
-            <h3>Sudatai Mandke College, Pune</h3>
-            <p>Savitribai Phule University - BCA FY</p>
-        </section>
-
-        <section id="skills" class="section">
-            <h2><i class="fas fa-tools"></i> Skills</h2>
-            <div class="skills">
-                <span class="skill">Ethical Hacking</span>
-                <span class="skill">VAPT</span>
-                <span class="skill">Windows Exploit</span>
-                <span class="skill">Android / iOS</span>
-                <span class="skill">Web Application</span>
-                <span class="skill">GitHub</span>
-            </div>
-        </section>
-
-        <section id="contact" class="section contact">
-            <h2><i class="fas fa-envelope"></i> Contact</h2>
-            <a href="mailto:prakashmm9011@gmail.com"><i class="fas fa-envelope"></i> Email</a>
-            <a href="https://www.linkedin.com/in/prakash-mohite-b04146289/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-            <a href="https://www.instagram.com/r4y_9011?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
-        </section>
+        <!-- Sections here -->
     </div>
 
     <script>
