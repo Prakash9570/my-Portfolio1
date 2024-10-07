@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prakash Mohite - Portfolio</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-color: #4F46E5;
+            --secondary-color: #818CF8;
+            --background-color: #1E1B4B;
+            --text-color: #FFFFFF;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, var(--background-color), #2D3748);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        .background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        header {
+            text-align: center;
+            padding: 40px 0;
+        }
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid var(--secondary-color);
+            margin-bottom: 20px;
+        }
+        h1, h2 {
+            color: var(--secondary-color);
+        }
+        .section {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s, transform 0.5s;
+        }
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+        .skill {
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+        }
+        .contact {
+            text-align: center;
+        }
+        .contact a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .contact a:hover {
+            text-decoration: underline;
+        }
+        .contact .fa {
+            margin-right: 5px;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <video autoplay muted loop class="background-video">
+        <source src="/assets/images/36784-412873690.mp4" type="video/mp4">
+    </video>
+
+    <div class="container">
+        <header>
+            <img src="./assets/images/profile-pic.png" alt="Prakash Mohite" class="profile-image">
+            <h1>Prakash Mohite</h1>
+            <p>Ethical Hacking | CyberSecurity</p>
+        </header>
+
+        <section id="about" class="section">
+            <h2><i class="fas fa-user"></i> About Me</h2>
+            <p>Always passionate about cybersecurity and ethical hacking. Keep on finding bugs and vulnerabilities, including exploiting Windows AV.</p>
+        </section>
+
+        <section id="experience" class="section">
+            <h2><i class="fas fa-briefcase"></i> Company</h2>
+            <h3>Co-Founder Of Cyber-Paradox</h3>
+            <p> Present</p>
+            <ul>
+                <li>We provide VAPT and all other cybersecurity services.</li>
+                <li>Implemented best practices in cybersecurity and VAPT for your website and applications.</li>
+            </ul>
+        </section>
+        
+        <section id="education" class="section">
+            <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+            <h3>Sudatai Mandke College, Pune</h3>
+            <p>Savitribai Phule University - BCA FY</p>
+        </section>
+
+        <section id="skills" class="section">
+            <h2><i class="fas fa-tools"></i> Skills</h2>
+            <div class="skills">
+                <span class="skill">Ethical Hacking</span>
+                <span class="skill">VAPT</span>
+                <span class="skill">Windows Exploit</span>
+                <span class="skill">Android / iOS</span>
+                <span class="skill">Web Application</span>
+                <span class="skill">GitHub</span>
+            </div>
+        </section>
+
+        <section id="contact" class="section contact">
+            <h2><i class="fas fa-envelope"></i> Contact</h2>
+            <a href="mailto:prakashmm9011@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+            <a href="https://www.linkedin.com/in/prakash-mohite-b04146289/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            <a href="https://www.instagram.com/r4y_9011?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+        </section>
+    </div>
+
+    <script>
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        function handleScroll() {
+            var sections = document.querySelectorAll('.section');
+            sections.forEach(function(section) {
+                if (isElementInViewport(section)) {
+                    section.classList.add('visible');
+                }
+            });
+        }
+
+        window.addEventListener('load', handleScroll);
+        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('resize', handleScroll);
+    </script>
+</body>
+</html>
