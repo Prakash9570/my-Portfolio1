@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Prakash Mohite's Ethical Hacker Portfolio. Discover the skills and projects of a passionate cybersecurity expert.">
+    <meta name="keywords" content="Ethical Hacker, Cybersecurity, Vulnerability Assessment, Penetration Testing, Ethical Hacking Portfolio">
     <title>Prakash Mohite - Ethical Hacker Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400&display=swap" rel="stylesheet">
@@ -81,6 +83,7 @@
             background-color: var(--primary-color);
             height: 10px;
             border-radius: 20px;
+            width: 0%;
             transition: width 1s ease;
         }
         .contact {
@@ -142,6 +145,12 @@
                 flex-direction: column;
                 align-items: center;
             }
+            h1 {
+                font-size: 1.5em;
+            }
+            h2 {
+                font-size: 1.2em;
+            }
         }
     </style>
 </head>
@@ -201,6 +210,21 @@
                 </div>
             </div>
         </section>
+
+        <section id="projects" class="section">
+            <h2><i class="fas fa-archive"></i> Projects</h2>
+            <div class="projects">
+                <div class="project-card">
+                    <h3 class="project-title">Bug Bounty Program</h3>
+                    <p class="project-description">Participated in a bug bounty program to discover vulnerabilities in a popular application.</p>
+                </div>
+                <div class="project-card">
+                    <h3 class="project-title">Penetration Testing on E-commerce Site</h3>
+                    <p class="project-description">Performed security audits and penetration testing to uncover critical flaws.</p>
+                </div>
+            </div>
+        </section>
+
         <section id="contact" class="section contact">
             <h2><i class="fas fa-envelope"></i> Get in Touch</h2>
             <p>If you are looking for a passionate and skilled ethical hacker, feel free to reach out!</p>
@@ -208,12 +232,13 @@
             <a href="https://www.linkedin.com/in/prakash-mohite-b04146289/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
             <a href="https://www.instagram.com/r4y_9011/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
             <a href="https://github.com/Prakash9570" target="_blank"><i class="fab fa-github"></i> Github</a>
-
         </section>
+
     </main>
 
     <footer>
         <p>&copy; 2024 Prakash Mohite. All rights reserved.</p>
+        <a href="#header" style="color: var(--primary-color);">Back to Top</a>
     </footer>
 
     <script>
@@ -243,6 +268,23 @@
         sections.forEach(section => {
             observer.observe(section);
         });
+
+        // Animate skill bars on scroll
+        const skillBars = document.querySelectorAll('.skill-bar');
+        const skillObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.width = entry.target.getAttribute('data-width');
+                }
+            });
+        }, { threshold: 0.5 });
+
+        skillBars.forEach(bar => {
+            bar.setAttribute('data-width', bar.style.width); // Save width for later
+            bar.style.width = '0%'; // Start with 0 width
+            skillObserver.observe(bar);
+        });
     </script>
+
 </body>
 </html>
