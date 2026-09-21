@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prakash M. Mohite</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9734200311398087"
+        crossorigin="anonymous"></script>
+    <style>
+        /* --- VARIABLES (PLAIN / PROFESSIONAL THEME) --- */
+        :root {
+            --primary-color: #2563eb;
+            --text-color: #1f2933;
+            --text-muted: #5f6b7a;
+            --background-color: #ffffff;
+            --panel-background: #f8f9fb;
+            --border-color: #e2e5ea;
+            --border-radius: 8px;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        main {
+            padding: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        a { color: var(--primary-color); }
+
+        header {
+            background: var(--background-color);
+            padding: 56px 20px 32px;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 1px solid var(--border-color);
+            margin-bottom: 18px;
+            object-fit: cover;
+        }
+
+        header h1 {
+            font-size: 2.1em;
+            margin-bottom: 8px;
+            font-weight: 700;
+            color: var(--text-color);
+        }
+
+        #typewriter {
+            color: var(--text-muted);
+            font-size: 1.05em;
+            font-weight: 500;
+            margin-top: 4px;
+        }
+
+        .section {
+            background-color: var(--background-color);
+            padding: 28px;
+            margin-bottom: 28px;
+            border-radius: var(--border-radius);
+            border: 1px solid var(--border-color);
+        }
+
+        .section h2 {
+            color: var(--text-color);
+            font-size: 1.35em;
+            margin-top: 0;
+            margin-bottom: 16px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
+            font-weight: 600;
+        }
+
+        .section h2 i {
+            color: var(--primary-color);
+            margin-right: 8px;
+        }
+
+        .section > p {
+            color: var(--text-muted);
+        }
+
+        .cert-card, .project-card, .session-card {
+            background-color: var(--panel-background);
+            padding: 16px 18px;
+            margin-bottom: 14px;
+            border-radius: var(--border-radius);
+            border: 1px solid var(--border-color);
+        }
+
+        .cert-card h3, .project-card h3, .session-card h3 {
+            color: var(--text-color);
+            font-size: 1.05em;
+            margin-top: 0;
+            margin-bottom: 6px;
+            font-weight: 600;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 18px;
+        }
+
+        .skill-item {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            padding: 6px 0;
+        }
+
+        .skill-item i {
+            color: var(--primary-color);
+            margin-right: 6px;
+        }
+
+        .skill-bar-container {
+            height: 6px;
+            background-color: var(--border-color);
+            border-radius: 3px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-bar {
+            height: 100%;
+            background-color: var(--primary-color);
+            border-radius: 3px;
+            width: 0;
+            transition: width 1s ease-out;
+        }
+
+        .skill-percentage {
+            position: absolute;
+            right: 0;
+            top: -20px;
+            font-size: 0.85em;
+            color: var(--text-muted);
+        }
+
+        .timeline-item {
+            border-left: 2px solid var(--border-color);
+            position: relative;
+            padding-left: 20px;
+            padding-bottom: 18px;
+            margin-left: 6px;
+        }
+
+        .timeline-item:last-child { padding-bottom: 0; }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 5px;
+            width: 10px;
+            height: 10px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            border: 2px solid var(--background-color);
+        }
+
+        .timeline-item h4 {
+            margin-top: 0;
+            margin-bottom: 6px;
+            color: var(--text-color);
+        }
+
+        .timeline-item p {
+            margin: 3px 0;
+            color: var(--text-muted);
+        }
+
+        .toolset-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 12px;
+            text-align: center;
+        }
+
+        .tool-icon {
+            padding: 14px 5px;
+            border-radius: var(--border-radius);
+            font-size: 0.9em;
+            border: 1px solid var(--border-color);
+            background-color: var(--panel-background);
+        }
+
+        .tool-icon i {
+            display: block;
+            font-size: 1.6em;
+            margin-bottom: 6px;
+            color: var(--primary-color);
+        }
+
+        .company-info h3 {
+            margin-bottom: 6px;
+        }
+
+        .company-info p {
+            color: var(--text-muted);
+        }
+
+        #experience ul li {
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 14px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .contact-links a {
+            display: flex;
+            align-items: center;
+            padding: 10px 18px;
+            background-color: var(--primary-color);
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: background-color 0.2s ease;
+        }
+
+        .contact-links a i {
+            margin-right: 8px;
+            color: #ffffff;
+        }
+
+        .contact-links a:hover {
+            background-color: #1d4fd1;
+        }
+
+        footer {
+            text-align: center;
+            padding: 24px;
+            margin-top: 20px;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-muted);
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header id="header">
+        <img src="assets/images/Profile picture.png" alt="Prakash Mohite" class="profile-image" loading="lazy">
+        <h1>Prakash M. Mohite</h1>
+        <p id="typewriter">Co-Founder of Cyber Paradox | Certified Ethical Hacker | Cybersecurity Specialist</p>
+    </header>
+
+    <main>
+        <section id="about" class="section">
+            <h2><i class="fas fa-info-circle"></i>About Me</h2>
+            <p>I am a dedicated ethical hacker with <b>2 years of operational experience</b> in the cybersecurity domain, holding a <b>Certified Ethical Hacker (CEH)</b> certification. My core expertise is focused on <b>penetration testing</b>, comprehensive <b>vulnerability assessments</b>, and designing robust security architectures against modern threats. My goal is to proactively secure digital assets and ensure compliance.</p>
+        </section>
+
+        <section id="education" class="section">
+            <h2><i class="fas fa-graduation-cap"></i>Education</h2>
+            <p>Fundamental training and specialization path.</p>
+
+            <div class="timeline-item">
+                <h4>Bachelor's in Computer Application (BCA)</h4>
+                <p><strong>Institution:</strong> Sudhatai Mandke College of Commerce (SMCC), Kothrud, Pune</p>
+                <p><strong>Graduation:</strong> Present</p>
+                <p><strong>Focus:</strong> Computer Application, Data Structures, Networking, Programming, Learning Projects</p>
+            </div>
+
+            <div class="timeline-item">
+                <h4>Junior College, Khamgoan, Barshi, Solapur</h4>
+                <p><strong>Institution:</strong> Maharashtra State Board</p>
+                <p><strong>Completion:</strong> 2023</p>
+                <p><strong>Focus:</strong> Building Logic, Basics of Computing, 12th Boards</p>
+            </div>
+            <div class="timeline-item">
+                <h4>Saint Joseph English Medium School, Barshi, Solapur</h4>
+                <p><strong>Institution:</strong> Central Board of Secondary Education (CBSE)</p>
+                <p><strong>Completion:</strong> 2021</p>
+                <p><strong>Focus:</strong> Foundational schooling</p>
+            </div>
+        </section>
+
+        <section id="certifications" class="section">
+            <h2><i class="fas fa-award"></i>Professional Certifications</h2>
+            <p>Formal validation of technical proficiencies across security standards and platforms.</p>
+            <div class="cert-card">
+                <h3>Certified Ethical Hacker (CEH)</h3>
+                <p><strong>Issued By:</strong> EC-Council | Focus: Network Scanning, System Hacking, Malware Threats, Web App Hacking.</p>
+            </div>
+       </section>
+
+        <section id="skills" class="section">
+            <h2><i class="fas fa-chart-bar"></i>Skills</h2>
+            <p>Core technical capabilities.</p>
+            <div class="skills-grid">
+
+                <div class="skill-item" data-level="90">
+                    <div><i class="fas fa-shield-alt"></i>Penetration Testing</div>
+                    <div class="skill-bar-container">
+                        <div class="skill-bar"></div>
+                        <span class="skill-percentage"></span>
+                    </div>
+                </div>
+
+                <div class="skill-item" data-level="85">
+                    <div><i class="fas fa-bug"></i>Vulnerability Assessment</div>
+                    <div class="skill-bar-container">
+                        <div class="skill-bar"></div>
+                        <span class="skill-percentage"></span>
+                    </div>
+                </div>
+
+                <div class="skill-item" data-level="75">
+                    <div><i class="fas fa-globe"></i>Web & API Security</div>
+                    <div class="skill-bar-container">
+                        <div class="skill-bar"></div>
+                        <span class="skill-percentage"></span>
+                    </div>
+                </div>
+
+                <div class="skill-item" data-level="95">
+                    <div><i class="fab fa-python"></i>Python/Shell Scripting</div>
+                    <div class="skill-bar-container">
+                        <div class="skill-bar"></div>
+                        <span class="skill-percentage"></span>
+                    </div>
+                </div>
+
+                <div class="skill-item" data-level="80">
+                    <div><i class="fas fa-lock"></i>Cryptography & PKI</div>
+                    <div class="skill-bar-container">
+                        <div class="skill-bar"></div>
+                        <span class="skill-percentage"></span>
+                    </div>
+                </div>
+
+                <div class="skill-item" data-level="70">
+                    <div><i class="fas fa-cloud"></i>Cloud Security (AWS/Azure)</div>
+                    <div class="skill-bar-container">
+                        <div class="skill-bar"></div>
+                        <span class="skill-percentage"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="toolset" class="section">
+            <h2><i class="fas fa-toolbox"></i>Core Toolset</h2>
+            <p>Operational proficiency with industry-standard offensive and defensive security tools.</p>
+            <div class="toolset-grid">
+                <div class="tool-icon" data-tool-name="Aircrack-ng"><i class="fas fa-wifi"></i> <span>Aircrack</span></div>
+                <div class="tool-icon" data-tool-name="Nmap"><i class="fas fa-network-wired"></i> <span>Nmap</span></div>
+                <div class="tool-icon" data-tool-name="Metasploit"><i class="fas fa-wrench"></i> <span>Metasploit</span></div>
+                <div class="tool-icon" data-tool-name="Burp Suite"><i class="fas fa-laptop-code"></i> <span>Burp Suite</span></div>
+                <div class="tool-icon" data-tool-name="Wireshark"><i class="fas fa-code-branch"></i> <span>Wireshark</span></div>
+                <div class="tool-icon" data-tool-name="SQLmap"><i class="fas fa-database"></i> <span>SQLmap</span></div>
+                <div class="tool-icon" data-tool-name="Hashcat"><i class="fas fa-lock-open"></i> <span>Hashcat</span></div>
+                <div class="tool-icon" data-tool-name="Nessus"><i class="fas fa-server"></i> <span>Nessus</span></div>
+            </div>
+        </section>
+
+        <section id="projects" class="section">
+            <h2><i class="fas fa-project-diagram"></i>Projects & Engagements</h2>
+            <p>Demonstrating problem-solving capabilities in real-world simulation environments.</p>
+
+            <div class="project-card" data-title="Phishing Defense System">
+                <h3>Custom Phishing Defense System (Python/Django)</h3>
+                <p>Developed an automated system to detect, quarantine, and analyze suspicious email attachments, using machine learning classification.</p>
+            </div>
+
+            <div class="project-card" data-title="HackTheBox Write-ups">
+                <h3>HackTheBox: Retired Machine Write-ups</h3>
+                <p>Successfully compromised and gained root/admin access on 5+ retired HTB machines, focusing on privilege escalation and lateral movement techniques.</p>
+            </div>
+
+            <div class="project-card" data-title="Secure Code Review CLI">
+                <h3>Automated SAST Tool Integration</h3>
+                <p>Implemented a CLI utility that integrates open-source Static Application Security Testing (SAST) tools into the CI/CD pipeline, reducing critical vulnerabilities by 30% in development builds.</p>
+            </div>
+        </section>
+
+        <section id="experience" class="section">
+            <h2><i class="fas fa-briefcase"></i>Experience</h2>
+
+            <div class="company-info">
+                <h3>Cyber Paradox — Co-Founder & Lead Security Analyst</h3>
+                <p><strong>Status:</strong> <span style="color: var(--primary-color); font-weight: 600;">Active</span> | <b>Duration:</b> 2024 - Present</p>
+                <p><b>Mission:</b> Providing proactive, adversarial security testing services focused on real-world impact across FinTech, SaaS, and e-commerce.</p>
+                <p>As co-founder, I drive the technical execution of penetration testing engagements, translating complex vulnerabilities into strategic risk mitigation plans.</p>
+            </div>
+
+            <h4>Key Responsibilities at Cyber Paradox:</h4>
+            <ul>
+                <li>Specialized in <b>Vulnerability Assessment and Penetration Testing (VAPT)</b> for diverse industrial clients (FinTech, SaaS, eCommerce).</li>
+                <li>Rigorously implemented and enforced <b>OWASP Top 10 security guidelines</b> to mitigate critical web application risks.</li>
+                <li>Designed and conducted targeted <b>cybersecurity awareness training</b> programs for corporate teams, significantly reducing social engineering vulnerability.</li>
+            </ul>
+        </section>
+
+        <section id="speaker" class="section">
+            <h2><i class="fas fa-microphone-alt"></i>Speaker & Sessions Log</h2>
+            <p>I share my findings and insights at various security events, focusing on practical hacking techniques and risk mitigation strategies.</p>
+
+            <div class="session-card">
+                <h3>Sudhatai Mandke College, Pune — Cybersecurity Summit</h3>
+                <p><strong>Date:</strong> January 15, 2025</p>
+                <p><strong>Session Topics:</strong></p>
+                <ul>
+                    <li><b>Prakash Mohite:</b> Advanced Cybersecurity Threats and Defenses</li>
+                    <li>Ajit Pawar: Networking Essentials</li>
+                    <li>Abhishek Sadamate: Women's Online Safety Protocols</li>
+                    <li>Sanket Gadwe: Mastering Bug Bounty Programs</li>
+                </ul>
+            </div>
+            <div class="session-card">
+                <h3>Cybersecurity Session for BTech Students at MIT-WPU, Kothrud</h3>
+                <p><strong>Date:</strong> September 13, 2024</p>
+                <p><strong>Session:</strong> Bytes & Insights — A Tech-Driven Knowledge Session</p>
+                <p><strong>Speaker 1:</strong> Harsh Tandel — Topic: Red Teaming & Offensive Security<br>
+                <strong>Speaker 2:</strong> Urvi Chheda — Topic: Audit & Compliance</p>
+            </div>
+        </section>
+
+        <section id="contact" class="section contact">
+            <h2><i class="fas fa-envelope-open-text"></i>Get in Touch</h2>
+            <p>Seeking a cybersecurity expert for consultation or partnership? Reach out below.</p>
+
+            <div class="contact-links">
+                <a href="mailto:prakashmm9011@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+                <a href="https://www.linkedin.com/in/prakash-mohite-b04146289/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="https://github.com/Prakash9570" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                <a href="https://www.instagram.com/r4y_9011/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Prakash Mohite</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const skillItems = document.querySelectorAll('.skill-item');
+            const skillObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const level = entry.target.getAttribute('data-level');
+                        const bar = entry.target.querySelector('.skill-bar');
+                        const percentage = entry.target.querySelector('.skill-percentage');
+
+                        bar.style.width = `${level}%`;
+                        percentage.textContent = `${level}%`;
+
+                        skillObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            skillItems.forEach(item => {
+                skillObserver.observe(item);
+            });
+        });
+    </script>
+
+</body>
+</html>
