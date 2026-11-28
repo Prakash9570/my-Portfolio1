@@ -1,605 +1,1990 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prakash M. Mohite</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto+Mono:wght@300;400;700&display=swap" rel="stylesheet">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9734200311398087"
-        crossorigin="anonymous"></script>
-    <style>
-        /* --- VARIABLE DEFINITIONS (DARK/NEUMORPHIC THEME) --- */
-        :root {
-            --primary-color: #4CAF50; /* A professional, clean green/blue accent */
-            --secondary-color: #333333; /* Dark gray for deep elements */
-            --background-color: #242424; /* Base dark mode background */
-            --text-color: #E0E0E0; /* Light gray text */
-            --neumorphic-shadow-light: #363636; /* Lighter shadow for 'lift' */
-            --neumorphic-shadow-dark: #121212; /* Darker shadow for 'press' */
-            --glass-background: rgba(45, 45, 45, 0.7); /* Semi-transparent background for blur */
-            --border-radius: 12px;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080b10">
 
-        /* --- KEYFRAMES --- */
-        @keyframes pulse-glow {
-            0% { box-shadow: 0 0 5px var(--primary-color); }
-            50% { box-shadow: 0 0 15px var(--primary-color), 0 0 25px rgba(76, 175, 80, 0.4); }
-            100% { box-shadow: 0 0 5px var(--primary-color); }
-        }
+  <title>Prakash M. Mohite | Cybersecurity Professional</title>
 
-        /* Cursor Blink Animation - Retained for terminal feel in header */
-        @keyframes blink {
-            50% { opacity: 0; }
-        }
+  <meta name="description" content="Prakash M. Mohite — Ethical Hacker, Cybersecurity Professional, Co-Founder and Lead Security Analyst. Explore my skills, projects and experience.">
 
-        /* --- BASE STYLES & BACKGROUND --- */
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--background-color);
-            color: var(--text-color);
-            line-height: 1.6;
-            margin: 0;
-            padding-left: 0; /* Removing the fixed HUD panel */
-            transition: background-color 0.5s;
-        }
+  <meta name="keywords" content="Prakash Mohite, Ethical Hacker, Cybersecurity, Penetration Testing, VAPT, CEH, Netroshield">
 
-        main {
-            padding: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-        /* --- HEADER & PROFILE (MODIFIED: Clean, Elevated) --- */
-        header {
-            background: var(--background-color);
-            padding: 60px 20px 30px;
-            text-align: center;
-            border-bottom: 1px solid var(--secondary-color);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease-in-out;
-        }
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-        .profile-image {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            border: 4px solid var(--primary-color);
-            margin-bottom: 15px;
-            box-shadow: 0 0 15px rgba(76, 175, 80, 0.6); /* Subtle colored glow */
-        }
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-        header h1 {
-            font-size: 2.5em;
-            margin-bottom: 5px;
-            font-weight: 700;
-            color: var(--text-color);
-        }
+  <style>
+    :root {
+      --bg: #080b10;
+      --bg-secondary: #0d1219;
+      --card: #111821;
+      --card-hover: #151f29;
+      --green: #b6ff5c;
+      --green-dark: #8edb35;
+      --white: #f4f7f4;
+      --text: #a0aaa6;
+      --border: rgba(255,255,255,0.09);
+      --font-main: 'Inter', sans-serif;
+      --font-heading: 'Space Grotesk', sans-serif;
+    }
 
-        /* Typewriter/Status Area */
-        #typewriter {
-            font-family: 'Roboto Mono', monospace;
-            color: var(--primary-color);
-            font-size: 1.1em;
-            display: inline-block;
-            margin-top: 10px;
-        }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
 
-        .cursor {
-            opacity: 1;
-            animation: blink 0.8s step-end infinite;
-            color: var(--primary-color);
-        }
+    body {
+      background: var(--bg);
+      color: var(--white);
+      font-family: var(--font-main);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
 
-        .online-status {
-            display: inline-block;
-            margin-left: 10px;
-            color: var(--primary-color);
-        }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-        /* --- SECTION CONTAINERS (NEUMORPHIC / SOFT SQUIRCLE) --- */
-        .section {
-            background-color: var(--background-color);
-            padding: 30px;
-            margin-bottom: 40px;
-            border-radius: var(--border-radius);
-            /* Neumorphic shadow for an elevated look */
-            box-shadow: 
-                8px 8px 16px var(--neumorphic-shadow-dark),
-                -8px -8px 16px var(--neumorphic-shadow-light);
-            transition: transform 0.3s, box-shadow 0.3s;
-            position: relative;
-            opacity: 0;
-            transform: translateY(20px);
-        }
+    img {
+      max-width: 100%;
+      display: block;
+    }
 
-        .section.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+    .container {
+      width: min(1120px, 90%);
+      margin: auto;
+    }
 
-        .section h2 {
-            color: var(--primary-color);
-            font-size: 1.8em;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid var(--secondary-color);
-            font-weight: 600;
-        }
+    .section {
+      padding: 110px 0;
+    }
 
-        /* --- CERTIFICATION & PROJECT CARDS (INSET NEUMORPHISM) --- */
-        .cert-card, .project-card, .session-card {
-            background-color: #2e2e2e; /* Slightly lighter inner element */
-            padding: 15px;
-            margin-bottom: 15px;
-            border-radius: var(--border-radius);
-            /* Inset shadow for a "pressed" look */
-            box-shadow: 
-                inset 5px 5px 10px var(--neumorphic-shadow-dark),
-                inset -5px -5px 10px var(--neumorphic-shadow-light);
-            transition: background-color 0.3s;
-        }
+    .section-heading {
+      margin-bottom: 50px;
+    }
 
-        .cert-card h3, .project-card h3, .session-card h3 {
-            color: var(--primary-color);
-            font-size: 1.1em;
-            margin-top: 0;
-            margin-bottom: 5px;
-        }
-        
-        /* Hover Effect for Cards */
-        .cert-card:hover, .project-card:hover, .session-card:hover {
-            background-color: #333333;
-            box-shadow: 
-                inset 2px 2px 5px var(--neumorphic-shadow-dark),
-                inset -2px -2px 5px var(--neumorphic-shadow-light),
-                0 0 10px rgba(76, 175, 80, 0.4); /* subtle external hover glow */
-        }
+    .section-tag {
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
 
-        /* --- SKILLS GRID & BARS (PROGRESSIVE, MODERN) --- */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 20px;
-        }
+    .section-heading h2 {
+      font-family: var(--font-heading);
+      font-size: clamp(32px, 5vw, 46px);
+      line-height: 1.2;
+      margin-top: 12px;
+    }
 
-        .skill-item {
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-            padding: 10px 0;
-        }
+    .section-heading h2 span {
+      color: var(--green);
+    }
 
-        .skill-bar-container {
-            height: 8px;
-            background-color: var(--secondary-color);
-            border-radius: 4px;
-            position: relative;
-            overflow: hidden;
-            /* Inset shadow for a subtle container effect */
-            box-shadow: inset 1px 1px 3px var(--neumorphic-shadow-dark);
-        }
+    .section-heading p {
+      color: var(--text);
+      margin-top: 12px;
+      max-width: 650px;
+    }
 
-        .skill-bar {
-            height: 100%;
-            background-color: var(--primary-color);
-            border-radius: 4px;
-            width: 0;
-            transition: width 1.5s ease-out; /* Smooth progress animation */
-            animation: pulse-glow 3s infinite alternate; /* Subtle breathing glow */
-        }
-        
-        .skill-percentage {
-            position: absolute;
-            right: 0;
-            top: -20px;
-            font-size: 0.9em;
-            color: var(--primary-color);
-            font-family: 'Roboto Mono', monospace;
-        }
-        
-        /* --- TIMELINE (CLEAN VERTICAL LINE) --- */
-        .timeline-item {
-            border-left: 3px solid var(--secondary-color);
-            position: relative;
-            padding-left: 25px;
-            padding-bottom: 20px;
-            margin-left: 10px;
-        }
+    /* NAVIGATION */
 
-        .timeline-item::before {
-            /* Dot marker */
-            content: '';
-            position: absolute;
-            left: -8px;
-            top: 5px;
-            width: 12px;
-            height: 12px;
-            background-color: var(--primary-color);
-            border-radius: 50%;
-            border: 2px solid var(--background-color);
-            box-shadow: 0 0 8px var(--primary-color);
-        }
+    header {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      background: rgba(8,11,16,0.88);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
 
-        /* --- TOOLSET (Modern Grid Icons) --- */
-        .toolset-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-            gap: 15px;
-            text-align: center;
-        }
+    nav {
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-        .tool-icon {
-            padding: 15px 5px;
-            border-radius: var(--border-radius);
-            font-size: 0.9em;
-            cursor: default;
-            /* Neumorphic press effect */
-            box-shadow: 
-                8px 8px 16px var(--neumorphic-shadow-dark),
-                -8px -8px 16px var(--neumorphic-shadow-light);
-            transition: all 0.2s ease-in-out;
-        }
-        
-        .tool-icon i {
-            display: block;
-            font-size: 2em;
-            margin-bottom: 5px;
-            color: var(--primary-color);
-        }
+    .logo {
+      font-family: var(--font-heading);
+      font-size: 23px;
+      font-weight: 700;
+      letter-spacing: -1px;
+    }
 
-        .tool-icon:hover {
-            transform: scale(0.95);
-            /* Simulate press/inset on hover */
-            box-shadow: 
-                inset 5px 5px 10px var(--neumorphic-shadow-dark),
-                inset -5px -5px 10px var(--neumorphic-shadow-light);
-        }
-        
-        /* --- CONTACT LINKS (Button Style) --- */
-        .contact-links {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        .contact-links a {
-            display: flex;
-            align-items: center;
-            padding: 10px 20px;
-            background-color: var(--primary-color);
-            color: var(--background-color); /* Dark text on bright button */
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 600;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-            transition: all 0.2s ease;
-        }
-        
-        .contact-links a i {
-            margin-right: 8px;
-            color: var(--background-color);
-        }
-        
-        .contact-links a:hover {
-            background-color: #5cb85c;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
-        }
+    .logo span {
+      color: var(--green);
+    }
 
-        /* --- FOOTER --- */
-        footer {
-            text-align: center;
-            padding: 20px;
-            margin-top: 40px;
-            border-top: 1px solid var(--secondary-color);
-            color: var(--secondary-color);
-            font-size: 0.9em;
-        }
-        
-        /* --- MEDIA QUERY --- */
-        @media (max-width: 768px) {
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #c2cbc6;
+      font-size: 13px;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--green);
+    }
+
+    .nav-contact {
+      border: 1px solid var(--green);
+      color: var(--green) !important;
+      padding: 10px 18px;
+      border-radius: 5px;
+    }
+
+    .nav-contact:hover {
+      background: var(--green);
+      color: var(--bg) !important;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 23px;
+      cursor: pointer;
+      color: var(--green);
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      padding: 130px 0 80px;
+      background:
+        radial-gradient(ellipse at 80% 40%, rgba(182,255,92,0.08), transparent 35%),
+        radial-gradient(ellipse at 10% 90%, rgba(182,255,92,0.04), transparent 30%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .hero-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--green);
+      background: rgba(182,255,92,0.07);
+      border: 1px solid rgba(182,255,92,0.2);
+      padding: 9px 14px;
+      border-radius: 30px;
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 25px;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 12px var(--green);
+    }
+
+    .hero h1 {
+      font-family: var(--font-heading);
+      font-size: clamp(43px, 6vw, 72px);
+      line-height: 1.08;
+      letter-spacing: -3px;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: var(--green);
+    }
+
+    .hero-role {
+      color: #d5ddd8;
+      font-size: 19px;
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+
+    .hero-description {
+      color: var(--text);
+      font-size: 15px;
+      max-width: 590px;
+      margin-bottom: 32px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 13px 22px;
+      border-radius: 5px;
+      font-size: 13px;
+      font-weight: 700;
+      transition: 0.3s;
+    }
+
+    .btn-primary {
+      background: var(--green);
+      color: #10150b;
+    }
+
+    .btn-primary:hover {
+      background: var(--green-dark);
+      transform: translateY(-3px);
+    }
+
+    .btn-outline {
+      border: 1px solid var(--border);
+      color: var(--white);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--green);
+      color: var(--green);
+    }
+
+    .hero-socials {
+      display: flex;
+      gap: 22px;
+      margin-top: 35px;
+    }
+
+    .hero-socials a {
+      color: #89948e;
+      font-size: 19px;
+      transition: 0.3s;
+    }
+
+    .hero-socials a:hover {
+      color: var(--green);
+      transform: translateY(-3px);
+    }
+
+    .hero-image {
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+
+    .image-frame {
+      width: 350px;
+      height: 420px;
+      border: 1px solid rgba(182,255,92,0.3);
+      border-radius: 12px;
+      padding: 12px;
+      position: relative;
+      background: var(--card);
+    }
+
+    .image-frame::before {
+      content: "";
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      border-top: 3px solid var(--green);
+      border-left: 3px solid var(--green);
+      top: -8px;
+      left: -8px;
+    }
+
+    .image-frame::after {
+      content: "";
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      border-bottom: 3px solid var(--green);
+      border-right: 3px solid var(--green);
+      bottom: -8px;
+      right: -8px;
+    }
+
+    .image-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 7px;
+    }
+
+    /* QUICK INFO */
+
+    .info-strip {
+      background: var(--bg-secondary);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 25px 0;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .info-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 13px;
+    }
+
+    .info-item i {
+      color: var(--green);
+      font-size: 20px;
+    }
+
+    .info-item strong {
+      display: block;
+      font-size: 13px;
+    }
+
+    .info-item span {
+      display: block;
+      color: var(--text);
+      font-size: 11px;
+    }
+
+    /* ABOUT */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 65px;
+      align-items: start;
+    }
+
+    .about-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 35px;
+      border-radius: 10px;
+    }
+
+    .about-card i {
+      font-size: 35px;
+      color: var(--green);
+      margin-bottom: 20px;
+    }
+
+    .about-card h3 {
+      font-family: var(--font-heading);
+      font-size: 23px;
+      margin-bottom: 10px;
+    }
+
+    .about-card p {
+      color: var(--text);
+      font-size: 14px;
+    }
+
+    .about-content p {
+      color: var(--text);
+      font-size: 15px;
+      margin-bottom: 18px;
+    }
+
+    .about-content strong {
+      color: var(--white);
+    }
+
+    .about-highlights {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .highlight {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #dce4df;
+      font-size: 13px;
+    }
+
+    .highlight i {
+      color: var(--green);
+    }
+
+    /* SKILLS */
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .skill-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 25px;
+      transition: 0.3s;
+    }
+
+    .skill-card:hover {
+      border-color: rgba(182,255,92,0.4);
+      transform: translateY(-4px);
+    }
+
+    .skill-top {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 14px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .skill-top span:last-child {
+      color: var(--green);
+    }
+
+    .skill-track {
+      height: 6px;
+      background: #27312d;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .skill-fill {
+      height: 100%;
+      width: 0;
+      background: var(--green);
+      border-radius: 10px;
+      transition: width 1.5s ease;
+    }
+
+    /* TOOLS */
+
+    .tools-section {
+      background: var(--bg-secondary);
+    }
+
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .tool-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 25px 15px;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .tool-card:hover {
+      border-color: var(--green);
+      transform: translateY(-5px);
+    }
+
+    .tool-card i {
+      color: var(--green);
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+
+    .tool-card h4 {
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    /* PROJECTS */
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .project-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      overflow: hidden;
+      transition: 0.3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-7px);
+      border-color: rgba(182,255,92,0.4);
+    }
+
+    .project-icon {
+      height: 145px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #151e24;
+    }
+
+    .project-icon i {
+      font-size: 50px;
+      color: var(--green);
+    }
+
+    .project-content {
+      padding: 25px;
+    }
+
+    .project-content h3 {
+      font-family: var(--font-heading);
+      font-size: 19px;
+      margin-bottom: 12px;
+    }
+
+    .project-content p {
+      color: var(--text);
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .tags span {
+      color: var(--green);
+      background: rgba(182,255,92,0.08);
+      padding: 5px 9px;
+      border-radius: 4px;
+      font-size: 10px;
+      font-weight: 600;
+    }
+
+    /* EXPERIENCE */
+
+    .experience-section {
+      background: var(--bg-secondary);
+    }
+
+    .experience-list {
+      position: relative;
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .experience-list::before {
+      content: "";
+      position: absolute;
+      left: 7px;
+      top: 10px;
+      bottom: 10px;
+      width: 1px;
+      background: rgba(182,255,92,0.3);
+    }
+
+    .experience-card {
+      position: relative;
+      padding-left: 40px;
+      margin-bottom: 35px;
+    }
+
+    .experience-card::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 7px;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 15px rgba(182,255,92,0.4);
+    }
+
+    .experience-content {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      padding: 28px;
+    }
+
+    .experience-date {
+      color: var(--green);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      margin-bottom: 10px;
+    }
+
+    .experience-content h3 {
+      font-family: var(--font-heading);
+      font-size: 21px;
+      margin-bottom: 4px;
+    }
+
+    .experience-content h4 {
+      color: #d3ddd6;
+      font-size: 14px;
+      margin-bottom: 14px;
+    }
+
+    .experience-content p {
+      color: var(--text);
+      font-size: 13px;
+      margin-bottom: 18px;
+    }
+
+    .experience-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .experience-tags span {
+      background: rgba(182,255,92,0.08);
+      border: 1px solid rgba(182,255,92,0.14);
+      color: var(--green);
+      padding: 5px 10px;
+      font-size: 10px;
+      border-radius: 4px;
+    }
+
+    /* EDUCATION */
+
+    .education-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .education-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 25px;
+      border-radius: 8px;
+    }
+
+    .education-card i {
+      color: var(--green);
+      font-size: 25px;
+      margin-bottom: 18px;
+    }
+
+    .education-card h3 {
+      font-family: var(--font-heading);
+      font-size: 17px;
+      margin-bottom: 10px;
+    }
+
+    .education-card p {
+      color: var(--text);
+      font-size: 12px;
+    }
+
+    .education-year {
+      display: inline-block;
+      color: var(--green);
+      font-size: 11px;
+      font-weight: 700;
+      margin-top: 15px;
+    }
+
+    /* CERTIFICATIONS */
+
+    .certification-card {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 30px;
+      border-radius: 9px;
+      max-width: 700px;
+    }
+
+    .certification-icon {
+      width: 75px;
+      height: 75px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(182,255,92,0.1);
+      border-radius: 10px;
+      color: var(--green);
+      font-size: 32px;
+    }
+
+    .certification-card h3 {
+      font-family: var(--font-heading);
+      font-size: 19px;
+      margin-bottom: 5px;
+    }
+
+    .certification-card p {
+      color: var(--text);
+      font-size: 13px;
+    }
+
+    /* SPEAKING */
+
+    .speaking-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .speaking-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 27px;
+    }
+
+    .speaking-card i {
+      color: var(--green);
+      font-size: 25px;
+      margin-bottom: 15px;
+    }
+
+    .speaking-card h3 {
+      font-size: 17px;
+      margin-bottom: 8px;
+    }
+
+    .speaking-card p {
+      color: var(--text);
+      font-size: 13px;
+    }
+
+    .speaking-date {
+      color: var(--green);
+      font-size: 11px;
+      margin-top: 15px;
+      font-weight: 700;
+    }
+
+    /* CONTACT */
+
+    .contact-section {
+      background: var(--bg-secondary);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 50px;
+    }
+
+    .contact-info p {
+      color: var(--text);
+      font-size: 14px;
+      margin: 15px 0 30px;
+    }
+
+    .contact-detail {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .contact-detail i {
+      width: 42px;
+      height: 42px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(182,255,92,0.09);
+      color: var(--green);
+      border-radius: 6px;
+    }
+
+    .contact-detail span {
+      color: var(--text);
+      font-size: 12px;
+    }
+
+    .contact-detail strong {
+      display: block;
+      color: var(--white);
+      font-size: 13px;
+      overflow-wrap: anywhere;
+    }
+
+    .contact-form {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      padding: 30px;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 12px;
+      margin-bottom: 8px;
+      color: #d9e1dc;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      background: #0b1117;
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      padding: 13px;
+      color: var(--white);
+      font-family: var(--font-main);
+      font-size: 13px;
+      outline: none;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--green);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 130px;
+    }
+
+    .contact-form button {
+      border: none;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 30px 0;
+      border-top: 1px solid var(--border);
+      background: var(--bg);
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .footer-content p {
+      color: var(--text);
+      font-size: 12px;
+    }
+
+    .footer-socials {
+      display: flex;
+      gap: 18px;
+    }
+
+    .footer-socials a {
+      color: var(--text);
+      transition: 0.3s;
+    }
+
+    .footer-socials a:hover {
+      color: var(--green);
+    }
+
+    /* BACK TO TOP */
+
+    .back-to-top {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      width: 43px;
+      height: 43px;
+      background: var(--green);
+      color: var(--bg);
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: 0.3s;
+      z-index: 999;
+    }
+
+    .back-to-top.show {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* SCROLL ANIMATION */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(25px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-image {
+        margin-top: 20px;
+      }
+
+      .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .tools-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .education-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 700px) {
+      .section {
+        padding: 80px 0;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 76px;
+        left: 0;
+        width: 100%;
+        padding: 25px 5%;
+        background: #0d1219;
+        border-bottom: 1px solid var(--border);
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 22px;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .hero {
+        padding-top: 130px;
+      }
+
+      .hero h1 {
+        letter-spacing: -2px;
+      }
+
+      .image-frame {
+        width: min(310px, 85vw);
+        height: 370px;
+      }
+
+      .info-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px 10px;
+      }
+
+      .skills-grid,
+      .projects-grid,
+      .education-grid,
+      .speaking-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .tools-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .about-highlights {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-content {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .hero h1 {
+        font-size: 42px;
+      }
+
+      .certification-card {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .experience-content {
+        padding: 20px;
+      }
+
+      .info-item {
+        justify-content: flex-start;
+      }
+    }
+  </style>
 </head>
+
 <body>
-    
-    <header id="header">
-        <img src="assets/images/Profile picture.png" alt="Prakash Mohite" class="profile-image" loading="lazy">
-        <h1>Prakash M. Mohite</h1>
-        
-        <p id="typewriter">
-            <span class="online-status">[SYSTEM ONLINE]</span>
+
+  <!-- NAVIGATION -->
+
+  <header>
+    <div class="container">
+      <nav>
+        <a href="#home" class="logo">PRAKASH<span>.</span></a>
+
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#contact" class="nav-contact">Contact Me</a></li>
+        </ul>
+
+        <div class="menu-toggle" id="menuToggle">
+          <i class="fas fa-bars"></i>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="hero-grid">
+
+        <div class="hero-content reveal">
+
+          <div class="hero-label">
+            <span class="status-dot"></span>
+            CYBERSECURITY PROFESSIONAL
+          </div>
+
+          <h1>
+            Prakash M.<br>
+            <span>Mohite.</span>
+          </h1>
+
+          <div class="hero-role">
+            Ethical Hacker | Security Analyst | Entrepreneur
+          </div>
+
+          <p class="hero-description">
+            I am a cybersecurity professional passionate about identifying
+            vulnerabilities, strengthening digital infrastructure and
+            building safer digital environments. My focus includes
+            penetration testing, vulnerability assessment, web security
+            and security research.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#projects" class="btn btn-primary">
+              Explore My Work <i class="fas fa-arrow-right"></i>
+            </a>
+
+            <a href="#contact" class="btn btn-outline">
+              Get In Touch
+            </a>
+          </div>
+
+          <div class="hero-socials">
+            <a href="https://www.linkedin.com/in/prakash-mohite-b04146289/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+
+            <a href="https://github.com/Prakash9570" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+
+            <a href="https://www.instagram.com/r4y_9011/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+
+            <a href="mailto:prakashmm9011@gmail.com" aria-label="Email">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-image reveal">
+          <div class="image-frame">
+            <img
+              src="assets/images/Profile picture.png"
+              alt="Prakash M. Mohite"
+            >
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- QUICK INFO -->
+
+  <section class="info-strip">
+    <div class="container">
+      <div class="info-grid">
+
+        <div class="info-item">
+          <i class="fas fa-shield-halved"></i>
+          <div>
+            <strong>Cybersecurity</strong>
+            <span>Security Specialist</span>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <i class="fas fa-user-secret"></i>
+          <div>
+            <strong>Ethical Hacking</strong>
+            <span>Offensive Security</span>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <i class="fas fa-code"></i>
+          <div>
+            <strong>Security Research</strong>
+            <span>Tools & Automation</span>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <i class="fas fa-graduation-cap"></i>
+          <div>
+            <strong>BCA Student</strong>
+            <span>Computer Applications</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+
+  <section class="section" id="about">
+    <div class="container">
+
+      <div class="section-heading reveal">
+        <span class="section-tag">WHO I AM</span>
+        <h2>About <span>Me</span></h2>
+        <p>Understanding my journey, interests and approach to cybersecurity.</p>
+      </div>
+
+      <div class="about-grid">
+
+        <div class="about-card reveal">
+          <i class="fas fa-user-shield"></i>
+          <h3>Security First. Always.</h3>
+          <p>
+            My goal is to understand how systems can fail, identify
+            security weaknesses and help make digital environments
+            more secure.
+          </p>
+        </div>
+
+        <div class="about-content reveal">
+          <p>
+            Hello! I am <strong>Prakash M. Mohite</strong>, an ethical hacker
+            and cybersecurity enthusiast with practical experience in
+            security assessment, penetration testing and vulnerability
+            analysis.
+          </p>
+
+          <p>
+            I have approximately two years of experience in the
+            cybersecurity domain, including entrepreneurial experience
+            as a co-founder and hands-on security work.
+          </p>
+
+          <p>
+            I am currently associated with
+            <strong>Netroshield Pvt. Ltd.</strong> as Co-Founder and
+            Lead Security Analyst. I am interested in identifying
+            vulnerabilities, understanding attack surfaces and
+            developing practical security solutions.
+          </p>
+
+          <p>
+            Alongside my professional work, I continue to explore
+            cybersecurity tools, scripting, security automation and
+            emerging technologies.
+          </p>
+
+          <div class="about-highlights">
+            <div class="highlight">
+              <i class="fas fa-check-circle"></i>
+              Penetration Testing
+            </div>
+
+            <div class="highlight">
+              <i class="fas fa-check-circle"></i>
+              Vulnerability Assessment
+            </div>
+
+            <div class="highlight">
+              <i class="fas fa-check-circle"></i>
+              Web Application Security
+            </div>
+
+            <div class="highlight">
+              <i class="fas fa-check-circle"></i>
+              Security Automation
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+
+  <section class="section" id="skills">
+    <div class="container">
+
+      <div class="section-heading reveal">
+        <span class="section-tag">MY EXPERTISE</span>
+        <h2>Technical <span>Skills</span></h2>
+        <p>Core areas of my technical knowledge and practical experience.</p>
+      </div>
+
+      <div class="skills-grid">
+
+        <div class="skill-card reveal">
+          <div class="skill-top">
+            <span>Penetration Testing</span>
+            <span>90%</span>
+          </div>
+          <div class="skill-track">
+            <div class="skill-fill" data-width="90%"></div>
+          </div>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-top">
+            <span>Vulnerability Assessment</span>
+            <span>85%</span>
+          </div>
+          <div class="skill-track">
+            <div class="skill-fill" data-width="85%"></div>
+          </div>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-top">
+            <span>Web & API Security</span>
+            <span>75%</span>
+          </div>
+          <div class="skill-track">
+            <div class="skill-fill" data-width="75%"></div>
+          </div>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-top">
+            <span>Python / Shell Scripting</span>
+            <span>95%</span>
+          </div>
+          <div class="skill-track">
+            <div class="skill-fill" data-width="95%"></div>
+          </div>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-top">
+            <span>Cryptography & PKI</span>
+            <span>80%</span>
+          </div>
+          <div class="skill-track">
+            <div class="skill-fill" data-width="80%"></div>
+          </div>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-top">
+            <span>Cloud Security</span>
+            <span>70%</span>
+          </div>
+          <div class="skill-track">
+            <div class="skill-fill" data-width="70%"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TOOLS -->
+
+  <section class="section tools-section">
+    <div class="container">
+
+      <div class="section-heading reveal">
+        <span class="section-tag">MY TOOLKIT</span>
+        <h2>Tools & <span>Technologies</span></h2>
+        <p>Tools I use for security testing, research and analysis.</p>
+      </div>
+
+      <div class="tools-grid">
+
+        <div class="tool-card reveal">
+          <i class="fas fa-wifi"></i>
+          <h4>Aircrack-ng</h4>
+        </div>
+
+        <div class="tool-card reveal">
+          <i class="fas fa-network-wired"></i>
+          <h4>Nmap</h4>
+        </div>
+
+        <div class="tool-card reveal">
+          <i class="fas fa-bug"></i>
+          <h4>Metasploit</h4>
+        </div>
+
+        <div class="tool-card reveal">
+          <i class="fas fa-globe"></i>
+          <h4>Burp Suite</h4>
+        </div>
+
+        <div class="tool-card reveal">
+          <i class="fas fa-chart-line"></i>
+          <h4>Wireshark</h4>
+        </div>
+
+        <div class="tool-card reveal">
+          <i class="fas fa-database"></i>
+          <h4>SQLmap</h4>
+        </div>
+
+        <div class="tool-card reveal">
+          <i class="fas fa-key"></i>
+          <h4>Hashcat</h4>
+        </div>
+
+        <div class="tool-card reveal">
+          <i class="fas fa-shield-alt"></i>
+          <h4>Nessus</h4>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+
+  <section class="section" id="projects">
+    <div class="container">
+
+      <div class="section-heading reveal">
+        <span class="section-tag">WHAT I HAVE BUILT</span>
+        <h2>Featured <span>Projects</span></h2>
+        <p>Selected cybersecurity projects and practical research work.</p>
+      </div>
+
+      <div class="projects-grid">
+
+        <article class="project-card reveal">
+          <div class="project-icon">
+            <i class="fas fa-envelope-open-text"></i>
+          </div>
+
+          <div class="project-content">
+            <h3>Custom Phishing Defense System</h3>
+
+            <p>
+              Developed a phishing defense system using Python and Django,
+              with machine-learning-based classification of email
+              attachments to help identify suspicious content.
+            </p>
+
+            <div class="tags">
+              <span>Python</span>
+              <span>Django</span>
+              <span>Machine Learning</span>
+              <span>Email Security</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-icon">
+            <i class="fas fa-terminal"></i>
+          </div>
+
+          <div class="project-content">
+            <h3>HackTheBox Write-ups</h3>
+
+            <p>
+              Completed and documented solutions for more than five
+              retired HackTheBox machines, focusing on enumeration,
+              exploitation and privilege escalation.
+            </p>
+
+            <div class="tags">
+              <span>Linux</span>
+              <span>Enumeration</span>
+              <span>Privilege Escalation</span>
+              <span>CTF</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-icon">
+            <i class="fas fa-code-branch"></i>
+          </div>
+
+          <div class="project-content">
+            <h3>Automated SAST Tool Integration</h3>
+
+            <p>
+              Worked on integrating static application security testing
+              into a development workflow through CLI and CI/CD
+              automation, with a reported 30% reduction in critical
+              vulnerabilities.
+            </p>
+
+            <div class="tags">
+              <span>SAST</span>
+              <span>CI/CD</span>
+              <span>Automation</span>
+              <span>DevSecOps</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+
+  <section class="section experience-section" id="experience">
+    <div class="container">
+
+      <div class="section-heading reveal">
+        <span class="section-tag">CAREER JOURNEY</span>
+        <h2>Professional <span>Experience</span></h2>
+        <p>
+          My entrepreneurial journey and professional experience
+          in the cybersecurity industry.
         </p>
-        
-    </header>
+      </div>
 
-    <main>
-        <section id="about" class="section">
-            <h2><i class="fas fa-info-circle"></i> About Me</h2>
-            <p>I am a dedicated ethical hacker with <b>2 years of operational experience</b> in the cybersecurity domain, holding a <b>Certified Ethical Hacker (CEH)</b> certification. My core expertise is focused on aggressive <b>penetration testing</b>, comprehensive <b>vulnerability assessments</b>, and designing robust security architectures against modern threats. My goal is to proactively secure digital assets and ensure compliance.</p>
-        </section>
-        
-        <section id="education" class="section">
-            <h2><i class="fas fa-graduation-cap"></i> Education Log</h2>
-            <p>Fundamental training and specialization path.</p>
-            
-            <div class="timeline-item">
-                <h4>Bachlor's in Computer Application (BCA)</h4>
-                <p><strong>Institution:</strong> Sudhatai Mandke College of Commerce (SMCC), Kothrud, Pune </p>
-                <p><strong>Graduation:</strong> Present</p>
-                <p><strong>Focus:</strong> Computer Application, Data Structure, Networking, Programming, Learning Projects</p>
+      <div class="experience-list">
+
+        <!-- NETROSHIELD -->
+
+        <div class="experience-card reveal">
+          <div class="experience-content">
+
+            <div class="experience-date">
+              AUGUST 2026 — PRESENT
             </div>
 
-            <div class="timeline-item">
-                <h4>Junior College Khamgoan, Barshi, Solapur</h4>
-                <p><strong>Institution: </strong>  Maharashtra State Board</p>
-                <p><strong>Complition: </strong>  2023</p>
-                <p><strong>Focus: </strong>Building Logics, Basics of Computing, with 12th Boards.</p>
-            </div>
-             <div class="timeline-item">
-                <h4>Saint Joseph English Medium School, Barshi, Solapur</h4>
-                <p><strong>Institution: </strong> Central Board of Secondary Education (CBSE)</p>
-                <p><strong>Complition: </strong> 2021</p>
-                <p><strong>Focus: </strong>  Basics of Life. 😂.</p>
-            </div>
-        </section>
+            <h3>Co-Founder & Lead Security Analyst</h3>
+            <h4>Netroshield Pvt. Ltd.</h4>
 
-        <section id="certifications" class="section">
-            <h2><i class="fas fa-award"></i> Professional Certifications</h2>
-            <p>Formal validation of technical proficiencies across security standards and platforms.</p>
-            <div class="cert-card">
-                <h3>Certified Ethical Hacker (CEH)</h3>
-                <p><strong>Issued By:</strong> EC-Council | Focus: Network Scanning, System Hacking, Malware Threats, Web App Hacking.</p>
-            </div>
-       </section>
-        
-        <section id="skills" class="section">
-            <h2><i class="fas fa-chart-bar"></i> Skills Matrix</h2>
-            <p>Core technical capabilities quantified for quick assessment.</p>
-            <div class="skills-grid">
-                
-                <div class="skill-item" data-level="90">
-                    <div><i class="fas fa-shield-alt"></i> Penetration Testing</div>
-                    <div class="skill-bar-container">
-                        <div class="skill-bar"></div>
-                        <span class="skill-percentage"></span>
-                    </div>
-                </div>
+            <p>
+              Leading cybersecurity initiatives and security assessment
+              engagements with a focus on penetration testing,
+              vulnerability assessment, OWASP Top 10 and cybersecurity
+              awareness. Contributing to security engagements across
+              FinTech, SaaS and e-commerce domains.
+            </p>
 
-                <div class="skill-item" data-level="85">
-                    <div><i class="fas fa-bug"></i> Vulnerability Assessment</div>
-                    <div class="skill-bar-container">
-                        <div class="skill-bar"></div>
-                        <span class="skill-percentage"></span>
-                    </div>
-                </div>
-
-                <div class="skill-item" data-level="75">
-                    <div><i class="fas fa-globe"></i> Web & API Security</div>
-                    <div class="skill-bar-container">
-                        <div class="skill-bar"></div>
-                        <span class="skill-percentage"></span>
-                    </div>
-                </div>
-
-                <div class="skill-item" data-level="95">
-                    <div><i class="fab fa-python"></i> Python/Shell Scripting</div>
-                    <div class="skill-bar-container">
-                        <div class="skill-bar"></div>
-                        <span class="skill-percentage"></span>
-                    </div>
-                </div>
-
-                <div class="skill-item" data-level="80">
-                    <div><i class="fas fa-lock"></i> Cryptography & PKI</div>
-                    <div class="skill-bar-container">
-                        <div class="skill-bar"></div>
-                        <span class="skill-percentage"></span>
-                    </div>
-                </div>
-
-                <div class="skill-item" data-level="70">
-                    <div><i class="fas fa-cloud"></i> Cloud Security (AWS/Azure)</div>
-                    <div class="skill-bar-container">
-                        <div class="skill-bar"></div>
-                        <span class="skill-percentage"></span>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <section id="toolset" class="section">
-            <h2><i class="fas fa-toolbox"></i> Core Toolset Mastery</h2>
-            <p>Operational proficiency with industry-standard offensive and defensive security tools.</p>
-            <div class="toolset-grid">
-                <div class="tool-icon" data-tool-name="Aircrack-ng"><i class="fas fa-wifi"></i> <span>Aircrack</span></div>
-                <div class="tool-icon" data-tool-name="Nmap"><i class="fas fa-network-wired"></i> <span>Nmap</span></div>
-                <div class="tool-icon" data-tool-name="Metasploit"><i class="fas fa-wrench"></i> <span>Metasploit</span></div>
-                <div class="tool-icon" data-tool-name="Burp Suite"><i class="fas fa-laptop-code"></i> <span>Burp Suite</span></div>
-                <div class="tool-icon" data-tool-name="Wireshark"><i class="fas fa-code-branch"></i> <span>Wireshark</span></div>
-                <div class="tool-icon" data-tool-name="SQLmap"><i class="fas fa-database"></i> <span>SQLmap</span></div>
-                <div class="tool-icon" data-tool-name="Hashcat"><i class="fas fa-lock-open"></i> <span>Hashcat</span></div> 
-                <div class="tool-icon" data-tool-name="Nessus"><i class="fas fa-server"></i> <span>Nessus</span></div>
-            </div>
-        </section>
-        
-        <section id="projects" class="section">
-            <h2><i class="fas fa-project-diagram"></i> Projects & Engagements</h2>
-            <p>Demonstrating problem-solving capabilities in real-world simulation environments.</p>
-
-            <div class="project-card" data-title="Phishing Defense System">
-                <h3>Custom Phishing Defense System (Python/Django)</h3>
-                <p>Developed an automated system to detect, quarantine, and analyze suspicious email attachments, using machine learning classification.</p>
-            </div>
-            
-            <div class="project-card" data-title="HackTheBox Write-ups">
-                <h3>HackTheBox: Retired Machine Write-ups</h3>
-                <p>Successfully compromised and gained root/admin access on 5+ retired HTB machines, focusing on privilege escalation and lateral movement techniques.</p>
+            <div class="experience-tags">
+              <span>VAPT</span>
+              <span>Penetration Testing</span>
+              <span>Security Analysis</span>
+              <span>OWASP Top 10</span>
+              <span>Cybersecurity Awareness</span>
             </div>
 
-            <div class="project-card" data-title="Secure Code Review CLI">
-                <h3>Automated SAST Tool Integration</h3>
-                <p>Implemented a CLI utility that integrates open-source Static Application Security Testing (SAST) tools into the CI/CD pipeline, reducing critical vulnerabilities by 30% in development builds.</p>
-            </div>
-        </section>
+          </div>
+        </div>
 
-        <section id="experience" class="section">
-            <h2><i class="fas fa-briefcase"></i> Experience</h2>
-            
-            <div class="company-info">
-                <h3>Netroshield Pvt. Ltd..- Co-Founder & Lead Security Analyst</h3>
-                <p><strong>Status:</strong> <span style="color: var(--primary-color); font-weight: bold;">Active</span> | <b>Duration:</b> 2024 - Present</p>
-                <p><b>Mission:</b> Providing proactive, adversarial security testing services focused on real-world impact across FinTech, SaaS, and e-commerce.</p>
-                <p>As co-founder, I drive the technical execution of penetration testing engagements, translating complex vulnerabilities into strategic risk mitigation plans.</p>
+        <!-- CYBER-PARADOX -->
+
+        <div class="experience-card reveal">
+          <div class="experience-content">
+
+            <div class="experience-date">
+              JUNE 2024 — JUNE 2026
             </div>
 
-            <h4>Key Responsibilities at Netroshield Pvt. Ltd.:</h4>
-            <ul>
-                <li>Specialized in <b>Vulnerability Assessment and Penetration Testing (VAPT)</b> for diverse industrial clients (FinTech, SaaS, eCommerce).</li>
-                <li>Rigorously implemented and enforced <b>OWASP Top 10 security guidelines</b> to mitigate critical web application risks.</li>
-                <li>Designed and conducted targeted <b>cybersecurity awareness training</b> programs for corporate teams, significantly reducing social engineering vulnerability.</li>
-            </ul>
-        </section>
+            <h3>Co-Founder</h3>
+            <h4>Cyber-Paradox</h4>
 
-        <section id="speaker" class="section">
-            <h2><i class="fas fa-microphone-alt"></i> Speaker & Sessions Log</h2>
-            <p>I share my findings and insights at various security events, focusing on practical hacking techniques and risk mitigation strategies.</p>
+            <p>
+              Co-founded Cyber-Paradox and contributed to the initiative
+              during its journey from June 2024 to June 2026.
+              This experience helped develop my entrepreneurial,
+              collaboration and cybersecurity industry experience.
+            </p>
 
-            <div class="session-card">
-                <h3>Sudhatai Mandke College, Pune - Cybersecurity Summit</h3>
-                <p><strong>Date:</strong> January 15, 2025</p>
-                <p><strong>Session Topics:</strong></p> 
-                <ul>
-                    <li><b>Prakash Mohite: Advanced CyberSecurity Threats and Defenses</b></li>
-                    <li>Ajit Pawar: Networking Essentials</li>
-                    <li>Abhishek Sadamate: Women's Online Safety Protocols</li>
-                    <li>Sanket Gadwe: Mastering Bug Bounty Programs</li>
-                </ul>
+            <div class="experience-tags">
+              <span>Co-Founder</span>
+              <span>Cybersecurity</span>
+              <span>Entrepreneurship</span>
+              <span>Leadership</span>
             </div>
-            <div class="session-card">
-                <h3>Cybersecurity Session For BTech Students At MIT-WPU, Kothrud</h3>
-                <p><strong>Date:</strong>September 13,2024</p>
-                <p><strong>Session:</strong> Bytes & Insights - A Tech-Driven Knowledge Session.<br>
-                  <br>
-                <strong> SPEAKER 1</strong> : <strong>HARSH TANDEL</strong><br> 
-              </strong>Topic</strong>: Red Teaming & Offensive Security<br>
-              <br>
-            <strong> SPEAKER 2</strong> : <strong>URVI CHHEDA</strong><br> 
-              </strong>Topic</strong>:Audit & Compliances</p></p>
 
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+
+  <section class="section" id="education">
+    <div class="container">
+
+      <div class="section-heading reveal">
+        <span class="section-tag">ACADEMIC BACKGROUND</span>
+        <h2>My <span>Education</span></h2>
+        <p>My academic journey and educational qualifications.</p>
+      </div>
+
+      <div class="education-grid">
+
+        <div class="education-card reveal">
+          <i class="fas fa-university"></i>
+
+          <h3>Bachelor of Computer Applications (BCA)</h3>
+
+          <p>
+            Sudhatai Mandke College of Commerce,
+            Kothrud, Pune.
+          </p>
+
+          <span class="education-year">Currently Pursuing</span>
+        </div>
+
+        <div class="education-card reveal">
+          <i class="fas fa-school"></i>
+
+          <h3>Higher Secondary Education</h3>
+
+          <p>
+            Junior College Khamgoan,
+            Barshi, Solapur.
+          </p>
+
+          <span class="education-year">2023 | Maharashtra State Board</span>
+        </div>
+
+        <div class="education-card reveal">
+          <i class="fas fa-book-open"></i>
+
+          <h3>Secondary Education</h3>
+
+          <p>
+            Saint Joseph English Medium School,
+            Barshi, Solapur.
+          </p>
+
+          <span class="education-year">2021 | CBSE</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATION -->
+
+  <section class="section">
+    <div class="container">
+
+      <div class="section-heading reveal">
+        <span class="section-tag">PROFESSIONAL CREDENTIALS</span>
+        <h2>Certifications & <span>Achievements</span></h2>
+      </div>
+
+      <div class="certification-card reveal">
+
+        <div class="certification-icon">
+          <i class="fas fa-certificate"></i>
+        </div>
+
+        <div>
+          <h3>Certified Ethical Hacker (CEH)</h3>
+          <p>
+            EC-Council — Certified Ethical Hacker.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SPEAKING SESSIONS -->
+
+  <section class="section">
+    <div class="container">
+
+      <div class="section-heading reveal">
+        <span class="section-tag">COMMUNITY & KNOWLEDGE SHARING</span>
+        <h2>Speaking <span>Sessions</span></h2>
+        <p>
+          Sharing cybersecurity knowledge and encouraging
+          security awareness among students.
+        </p>
+      </div>
+
+      <div class="speaking-grid">
+
+        <div class="speaking-card reveal">
+          <i class="fas fa-microphone"></i>
+
+          <h3>Cybersecurity Summit</h3>
+
+          <p>
+            Sudhatai Mandke College of Commerce,
+            Kothrud, Pune.
+          </p>
+
+          <div class="speaking-date">
+            JANUARY 15, 2025
+          </div>
+        </div>
+
+        <div class="speaking-card reveal">
+          <i class="fas fa-users"></i>
+
+          <h3>Bytes & Insights</h3>
+
+          <p>
+            MIT-WPU, Kothrud, Pune.
+          </p>
+
+          <div class="speaking-date">
+            SEPTEMBER 13, 2024
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+
+  <section class="section contact-section" id="contact">
+    <div class="container">
+
+      <div class="section-heading reveal">
+        <span class="section-tag">LET'S CONNECT</span>
+        <h2>Get In <span>Touch</span></h2>
+        <p>
+          Interested in cybersecurity, collaboration or professional
+          opportunities? Feel free to connect.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+
+        <div class="contact-info reveal">
+
+          <h3>Let's start a conversation.</h3>
+
+          <p>
+            Whether you want to discuss cybersecurity, collaborate on
+            a project or explore professional opportunities,
+            I would be happy to hear from you.
+          </p>
+
+          <div class="contact-detail">
+            <i class="fas fa-envelope"></i>
+            <div>
+              <span>Email</span>
+              <strong>prakashmm9011@gmail.com</strong>
             </div>
-        </section>
+          </div>
 
-        <section id="contact" class="section contact">
-            <h2><i class="fas fa-envelope-open-text"></i> Establish Secure Connection</h2>
-            <p>Seeking a cybersecurity expert for consultation or partnership? Transmit your query!</p>
-            
-            <div class="contact-links">
-                <a href="mailto:prakashmm9011@gmail.com"><i class="fas fa-envelope"></i> Email</a>
-                <a href="https://www.linkedin.com/in/prakash-mohite-b04146289/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                <a href="https://github.com/Prakash9570" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-                <a href="https://www.instagram.com/r4y_9011/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+          <div class="contact-detail">
+            <i class="fab fa-linkedin-in"></i>
+            <div>
+              <span>LinkedIn</span>
+              <strong>Prakash M. Mohite</strong>
             </div>
-            </section>
-    </main>
+          </div>
 
-    <footer>
-        <p>&copy; 2025 Prakash Mohite. System Secured.</p>
-    </footer>
+          <div class="contact-detail">
+            <i class="fab fa-github"></i>
+            <div>
+              <span>GitHub</span>
+              <strong>Prakash9570</strong>
+            </div>
+          </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const el = document.getElementById('typewriter');
-            const onlineStatus = el.querySelector('.online-status');
-            const textToType = "Co-Founder of Netroshield Pvt. Ltd. | Certified Ethical Hacker | CyberSecurity Specialist ";
-            
-            el.innerHTML = ''; 
-            
-            const textNode = document.createTextNode('');
-            
-            const cursor = document.createElement('span');
-            cursor.className = 'cursor';
-            cursor.innerHTML = '_';
-            
-            el.appendChild(textNode);
-            el.appendChild(cursor);
-            el.appendChild(onlineStatus);
+          <div class="contact-detail">
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+              <span>Location</span>
+              <strong>Pune, Maharashtra, India</strong>
+            </div>
+          </div>
 
-            let i = 0;
-            function type() {
-                if (i < textToType.length) {
-                    textNode.data += textToType.charAt(i);
-                    i++;
-                    setTimeout(type, 80); // Typing speed in ms
-                } else {
-                    cursor.style.display = 'none'; // Hide cursor after typing is complete
-                }
-            }
-            type();
-            
-            // --- Skill Bar Animation Logic ---
-            const skillItems = document.querySelectorAll('.skill-item');
-            const skillObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const level = entry.target.getAttribute('data-level');
-                        const bar = entry.target.querySelector('.skill-bar');
-                        const percentage = entry.target.querySelector('.skill-percentage');
-                        
-                        bar.style.width = `${level}%`;
-                        percentage.textContent = `${level}%`;
-                        
-                        skillObserver.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.5 }); 
+        </div>
 
-            skillItems.forEach(item => {
-                skillObserver.observe(item);
-            });
-        });
-        // --- END Typewriter & Skill Bar Logic ---
+        <form class="contact-form reveal" id="contactForm">
 
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Enter your name"
+              required
+            >
+          </div>
 
-        // Sticky Header Hiding Logic 
-        const header = document.getElementById('header');
-        let lastScrollY = window.scrollY;
+          <div class="form-group">
+            <label for="email">Your Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Enter your email"
+              required
+            >
+          </div>
 
-        window.addEventListener('scroll', () => {
-            if (window.innerWidth > 768) {
-                if (window.scrollY > lastScrollY && window.scrollY > 100) {
-                    header.style.transform = 'translateY(-100%)';
-                    header.style.opacity = '0';
-                } else {
-                    header.style.transform = 'translateY(0)';
-                    header.style.opacity = '1';
-                }
-            }
-            lastScrollY = window.scrollY;
-        });
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input
+              type="text"
+              id="subject"
+              name="subject"
+              placeholder="Enter subject"
+              required
+            >
+          </div>
 
-        // Section Fade-In on Scroll Logic 
-        const sections = document.querySelectorAll('.section');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.1 }); 
+          <div class="form-group">
+            <label for="message">Your Message</label>
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Write your message..."
+              required
+            ></textarea>
+          </div>
 
-        sections.forEach(section => {
-            observer.observe(section);
-        });
-    </script>
+          <button type="submit" class="btn btn-primary">
+            Send Message <i class="fas fa-paper-plane"></i>
+          </button>
+
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+
+        <p>
+          © <span id="currentYear"></span> Prakash M. Mohite.
+          All Rights Reserved.
+        </p>
+
+        <div class="footer-socials">
+          <a href="https://www.linkedin.com/in/prakash-mohite-b04146289/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+
+          <a href="https://github.com/Prakash9570" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+
+          <a href="https://www.instagram.com/r4y_9011/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <!-- BACK TO TOP -->
+
+  <a href="#home" class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </a>
+
+  <!-- JAVASCRIPT -->
+
+  <script>
+    // Mobile navigation
+
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+
+      const icon = menuToggle.querySelector("i");
+
+      if (navLinks.classList.contains("active")) {
+        icon.classList.remove("fa-bars");
+        icon.classList.add("fa-xmark");
+      } else {
+        icon.classList.remove("fa-xmark");
+        icon.classList.add("fa-bars");
+      }
+    });
+
+    // Close mobile menu after clicking a link
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+
+        const icon = menuToggle.querySelector("i");
+        icon.classList.remove("fa-xmark");
+        icon.classList.add("fa-bars");
+      });
+    });
+
+    // Scroll reveal animation
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("active");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.12
+    });
+
+    document.querySelectorAll(".reveal").forEach(element => {
+      revealObserver.observe(element);
+    });
+
+    // Animated skill bars
+
+    const skillObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const bar = entry.target;
+          bar.style.width = bar.dataset.width;
+          skillObserver.unobserve(bar);
+        }
+      });
+    }, {
+      threshold: 0.5
+    });
+
+    document.querySelectorAll(".skill-fill").forEach(bar => {
+      skillObserver.observe(bar);
+    });
+
+    // Back to top button
+
+    const backToTop = document.getElementById("backToTop");
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 400) {
+        backToTop.classList.add("show");
+      } else {
+        backToTop.classList.remove("show");
+      }
+    });
+
+    // Dynamic copyright year
+
+    document.getElementById("currentYear").textContent =
+      new Date().getFullYear();
+
+    // Contact form - opens email application
+
+    const contactForm = document.getElementById("contactForm");
+
+    contactForm.addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const subject = document.getElementById("subject").value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      if (!name || !email || !subject || !message) {
+        alert("Please fill in all fields.");
+        return;
+      }
+
+      const emailSubject = encodeURIComponent(subject);
+
+      const emailBody = encodeURIComponent(
+        "Name: " + name +
+        "\nEmail: " + email +
+        "\n\nMessage:\n" + message
+      );
+
+      window.location.href =
+        "mailto:prakashmm9011@gmail.com" +
+        "?subject=" + emailSubject +
+        "&body=" + emailBody;
+    });
+  </script>
 
 </body>
 </html>
-
-
